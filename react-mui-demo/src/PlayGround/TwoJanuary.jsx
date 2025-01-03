@@ -8,27 +8,67 @@ import {
 } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import React from "react";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import React, { useState } from "react";
 
 const TwoJanuary = () => {
+  const [visibility, SetVisibility] = useState(false);
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [e.target.id]: e.target.value || "",
+    }));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validationLoginData) {
+      return "Login SUccessfully";
+    }
+  };
+  const validationLoginData = (formData) => {
+    if (formData.username === "") {
+      console.log("isempty");
+      return false;
+    }
+    if (formData.username.length < 6) {
+      console.log("Min 7 digits of username");
+      return false;
+    }
+    if (formData.password === "") {
+      console.log("isEmpty");
+      return false;
+    }
+    if (formData.password.length < 6) {
+      console.log("Min 8 dights of password");
+      return false;
+    }
+    return true;
+  };
+
+  const handleVisibility = (e) => {
+    SetVisibility((prev) => !prev);
+  };
+  console.log(formData);
   return (
     <Stack
-      width="100%"
-      height="80vh"
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
+      sx={{
+        width: "50%",
+        bgcolor: "whitesmoke",
+        borderRadius: "10px",
+      }}
     >
       <Box
         sx={{
-          width: "50%",
-          padding: "50px 20px",
-          boxShadow: "0px 0px 5px black",
-          borderRadius: "5px",
+          width: "100%",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
+          padding: "50px 20px",
         }}
       >
         <Typography
@@ -49,14 +89,17 @@ const TwoJanuary = () => {
           This updated code ensures both single and multiple selection fields
           work correctly and aligns with Material-UI's functionality.
         </Typography>
-        <form>
+        <form onSubmit={handleSubmit}>
           <TextField
             fullWidth
+            id="username"
             label="Username"
             color="success"
             size="medium"
             type="text"
             required
+            value={formData.username}
+            onChange={handleChange}
             sx={{ mb: 2 }}
             InputProps={{
               endAdornment: (
@@ -68,16 +111,29 @@ const TwoJanuary = () => {
           />
           <TextField
             fullWidth
+            id="password"
             label="Password"
             color="success"
             size="medium"
             required
-            type="password"
+            value={formData.password}
+            onChange={handleChange}
+            type={visibility ? "text" : "password"}
             sx={{ mb: 2 }}
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <VisibilityIcon />
+                  {visibility ? (
+                    <VisibilityOffIcon
+                      onClick={handleVisibility}
+                      sx={{ cursor: "pointer" }}
+                    />
+                  ) : (
+                    <VisibilityIcon
+                      onClick={handleVisibility}
+                      sx={{ cursor: "pointer" }}
+                    />
+                  )}
                 </InputAdornment>
               ),
             }}
