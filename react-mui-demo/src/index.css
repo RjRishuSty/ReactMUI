@@ -3,14 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-body {
-  background-color: gray !important;
-}
+
 .App {
   /* border: 2px solid red; */
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 4rem;
 }
