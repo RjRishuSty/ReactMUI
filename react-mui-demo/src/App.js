@@ -11,6 +11,7 @@ import TwoJanuary from './PlayGround/TwoJanuary';
 import { MuiRadioButton } from './Component/MuiRadioButton';
 import MuiCheckbox from './Component/MuiCheckbox';
 import MuiSwitch from './Component/MuiSwitch';
+import MuiRating from './Component/MuiRating';
 
 
 
@@ -25,7 +26,8 @@ function App() {
       {/* <TwoJanuary/> */}
       {/* <MuiRadioButton/> */}
       {/* <MuiCheckbox/> */}
-      <MuiSwitch/>
+      {/* <MuiSwitch/> */}
+      <MuiRating/>
     </div>
   );
 }
