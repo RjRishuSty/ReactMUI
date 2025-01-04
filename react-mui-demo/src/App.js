@@ -10,6 +10,7 @@ import MuiSelectTextField from './Component/MuiSelectTextField';
 import TwoJanuary from './PlayGround/TwoJanuary';
 import { MuiRadioButton } from './Component/MuiRadioButton';
 import MuiCheckbox from './Component/MuiCheckbox';
+import MuiSwitch from './Component/MuiSwitch';
 
 
 
@@ -23,7 +24,8 @@ function App() {
       {/* <MuiSelectTextField/> */}
       {/* <TwoJanuary/> */}
       {/* <MuiRadioButton/> */}
-      <MuiCheckbox/>
+      {/* <MuiCheckbox/> */}
+      <MuiSwitch/>
     </div>
   );
 }
