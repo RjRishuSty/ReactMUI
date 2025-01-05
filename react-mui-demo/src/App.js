@@ -16,6 +16,8 @@ import MuiAutoComplete from './Component/MuiAutoComplete';
 import MuiLayoutBox from './Component/MuiLayoutBox';
 import MuiLayoutStack from './Component/MuiLayoutStack';
 import MuiGrid from './Component/MuiGrid';
+import MuiPaper from './Component/MuiPaper';
+import MuiCard from './Component/MuiCard';
 
 
 
@@ -35,7 +37,9 @@ function App() {
       {/* <MuiAutoComplete/> */}
       {/* <MuiLayoutBox/> */}
       {/* <MuiLayoutStack/> */}
-      <MuiGrid/>
+      {/* <MuiGrid/> */}
+      {/* <MuiPaper/> */}
+      <MuiCard/>
     </div>
   );
 }
