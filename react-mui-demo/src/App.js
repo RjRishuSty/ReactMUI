@@ -18,6 +18,7 @@ import MuiLayoutStack from './Component/MuiLayoutStack';
 import MuiGrid from './Component/MuiGrid';
 import MuiPaper from './Component/MuiPaper';
 import MuiCard from './Component/MuiCard';
+import MuiAccordion from './Component/MuiAccordion';
 
 
 
@@ -39,7 +40,8 @@ function App() {
       {/* <MuiLayoutStack/> */}
       {/* <MuiGrid/> */}
       {/* <MuiPaper/> */}
-      <MuiCard/>
+      {/* <MuiCard/> */}
+      <MuiAccordion/>
     </div>
   );
 }
