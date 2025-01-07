@@ -20,6 +20,7 @@ import MuiPaper from './Component/MuiPaper';
 import MuiCard from './Component/MuiCard';
 import MuiAccordion from './Component/MuiAccordion';
 import MuiImageList from './Component/MuiImageList';
+import MuiNavbar from './Component/MuiNavbar';
 
 
 
@@ -44,6 +45,7 @@ function App() {
       {/* <MuiCard/> */}
       {/* <MuiAccordion/> */}
       {/* <MuiImageList/> */}
+      <MuiNavbar/>
     </div>
   );
 }
